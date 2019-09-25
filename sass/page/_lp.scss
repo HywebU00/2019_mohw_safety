@@ -1,0 +1,200 @@
+.lp {
+    table {
+        td {
+          
+            a {
+                color:darken($primaryColor, 12);
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            &.date {
+                text-align: center;
+                 color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+            &.num {
+                text-align: center;
+                color: $secondaryColor;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .list {
+        &>ul, ol {
+            list-style-type: none;
+            padding: 0;
+            &>li {
+                border-bottom: 1px solid #ccc;
+                position: relative;
+                transition: .5s;
+                &:hover {
+                    background-color: #fff;
+                }
+                .tag {
+                    margin-left: 2em;
+                }
+                &>a {
+                    display: block;
+                    position: relative;
+                    line-height: 1.6em;
+                    color: $color-word;
+                    padding: 1.3em 120px 1.3em 3em;
+                    @include screen('xs_mobile'){
+                        padding:1.3em 1.3em .5em 3em;
+                    }
+                    &:hover {
+                        color:darken($primaryColor, 12);
+                    }
+                    .num {
+                        width: 1.5em;
+                        text-align: right;
+                        position: absolute;
+                        top: 1.3em;
+                        left: 5px;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        background-color: #ccc;
+                        color: #000;
+                        text-align: center;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 1px;
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            border: 1px solid #999;
+                            z-index: 1;
+                        }
+                    }
+                }
+                span.dept {
+                    display: inline-block;
+                    color: #666;
+                    
+                }
+                time {
+                    display: block;
+                    color: #666;
+                    font-size: .938em;
+                    position: absolute;
+                    top: 1.3em;
+                    right: 10px;
+                    width: 100px;
+                    text-align: right;
+                    @include screen('xs_mobile'){
+                        position: relative;
+                        top:auto;
+                        right:auto;
+                        width: auto;
+                        left:3em;
+                        text-align: left;
+                        margin-bottom: 1em;
+                    }
+                }
+            }
+        }
+    }
+    .album {
+        margin: 1em auto;
+        overflow: hidden;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                @include make-xs-column(12);
+                @include make-sm-column(6);
+                @include make-md-column(4);
+                @include make-lg-column(4);
+                @include gutter();
+                a {
+                    display: block;
+                    text-align: center;
+                    width: 90%;
+                    margin: 2% 5%;
+                    min-height: 320px;
+                    border: 1px solid #DDD;
+                    @include border-radius(4px);
+                    padding: 5px;
+                    @include aSetting_nocolor;
+                    @include screen('notebook') {
+                        min-height: 260px;
+                    }
+                    @include screen('tablet') {
+                        min-height: auto;
+                    }
+                    time {
+                        color: #666;
+                    }
+                    &:hover {
+                        .imgOuter {
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+                .imgOuter {
+                    width: 100%;
+                    @include aspect-ratio(4, 3);
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: .3s ease-out;
+                    }
+                }
+                .caption {
+                    text-align: left;
+                    width: 94%;
+                    margin-left: 3%;
+                    h3 {
+                        height: 3em;
+                        overflow: hidden;
+                        line-height: 1.5em;
+                        display: block;
+                        margin: 5px 0;
+                    }
+                    time {
+                        color: #666;
+                        font-size: .938em;
+                        display: block;
+                        margin: 15px 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    .table_list{
+        td{
+            &.download{
+                width: 8%;
+                text-align: center;
+                @include screen('xs_mobile'){
+                    width: auto;
+                    text-align: left;
+                }
+            }
+            ul.download_file{
+                margin:0;
+                padding:0;
+                @include screen('xs_mobile'){
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                li{
+                    display: inline-block;
+                    list-style: none;
+                }
+            }
+        }
+    }
+}

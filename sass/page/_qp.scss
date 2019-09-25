@@ -1,0 +1,10 @@
+.qp{
+	margin: 1em auto;
+	@include box-sizing;
+	padding:1em;
+	.form_grid{
+		background-color: #fff;
+		padding:30px;
+		margin:0;
+	}
+}

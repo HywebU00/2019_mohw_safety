@@ -1,0 +1,73 @@
+// 自動產生編號：https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
+.np {
+    ul,ol {
+        overflow:hidden;
+        padding:1em 0;
+        margin: 0;
+        overflow:hidden;
+    }
+    li {
+        display: block;
+        width: 48%;
+        margin: 0 2% 15px 0;
+        float: left;
+        @include box-sizing(border-box);
+        &:nth-child(even) {
+        	width: 50%;
+            margin-right: 0px;
+        }
+        @include screen('mobile') {
+            float:none;
+            width: 96%;
+            margin:0px auto 10px;
+            &:nth-child(even){
+                width: 96%;
+                margin-right: auto;
+            }
+        }
+        a {
+            background-color: $secondaryColor;
+            color:#fff;
+            padding: 18px 60px 18px 30px;
+            display: block;
+            vertical-align: top;
+            @include text-overflow;
+            position:relative;
+            @include aSetting_nocolor;
+            font-size: 1.25em;
+            color:#fff;
+            border-top:9px solid $primaryColor;
+            &:before{
+                content: '';
+                background-image: url('../images/care_more.png');
+                width: 29px;
+                height: 16px;
+                position: absolute;
+                right:30px;
+                top:20px;
+                transition: .5s;
+            }
+            &:hover{
+                &:before{
+                    right:20px;
+                }
+            }
+            .num{
+                position: absolute;
+                width:1em;
+                top: 1em;
+                left: .5em;
+                text-align: right;
+                display: none;
+                &:after{
+                    content:".";
+                    display:inline-block;
+                }
+            }
+            &:hover,
+            &:focus {
+               
+            }
+        }
+    }
+}
