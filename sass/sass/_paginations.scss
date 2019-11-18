@@ -129,12 +129,6 @@
         span{
             color:darken($primaryColor, 12);
         }
-        // select {
-        //     margin: 0px .5em;
-        //     @include screen('mobile') {
-        //         margin: 0px;
-        //     }
-        // }
         input[type="button"] {
             @include gradient(#F7F7F7, #EAEAEA, vertical);
             border: 1px solid #CCC;

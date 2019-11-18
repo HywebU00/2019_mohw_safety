@@ -154,4 +154,17 @@ $(function() {
             // instead of a settings object
         ]
     });
+
+    //認識社會安全網限字數
+
+    var plan_len =200; // 超過200個字以"..."取代
+    $(".Planblock .plan p").each(function(i) {
+        if ($(this).text().length > plan_len) {
+            $(this).attr("title", $(this).text());
+            var text = $(this).text().substring(0, plan_len - 1) + "...";
+            $(this).text(text);
+        }
+    });
+
+
 });

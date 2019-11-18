@@ -27,7 +27,35 @@ h1.title {
         }
     }
     img {
+        max-width: 100%;
+        &.float_left {
+            float: left;
+            margin: 0px 1.5em 1.5em 0;
+            max-width: 55%;
+            @include screen('mobile') {
+                float: none;
+                max-width: 100%;
+                margin: 0px auto;
+            }
+        }
+        &.float_right {
+            float: right;
+            margin: 0px 0 1.5em 1.5em;
+            width: auto;
+            max-width: 55%;
+            @include screen('mobile') {
+                float: none;
+                max-width: 100%;
+                margin: 0px auto;
+            }
+        }
+    }
+    figure {
         max-width: 400px;
+        @include screen('mobile') {
+            max-width: 100%;
+            margin: 0px auto;
+        }
         &.float_left {
             float: left;
             margin: 0px 1.5em 1.5em 0;
@@ -53,19 +81,21 @@ h1.title {
     a {
         @include aSetting;
     }
+    blockquote  {
+        clear: both;
+        float: none;
+    }
 }
 .cp_info {
-    
     line-height: 1.5em;
     list-style: none;
     margin: 0 0 .7em 0;
-   
     @include box-sizing;
-    padding: 1em 1.5em ;
+    padding: 1em 1.5em;
     background: #fff;
     @extend %clearfix;
     li {
-       margin-right: 30px;
+        margin-right: 30px;
         margin-bottom: .5em;
         display: inline-block;
         vertical-align: top;
@@ -77,8 +107,8 @@ h1.title {
             width: 100%;
             display: block;
         }
-        span{
-            color:$linkColor;
+        span {
+            color: $linkColor;
         }
     }
 }
@@ -136,9 +166,8 @@ div.tag {
     }
     li {
         position: relative;
-       
         border-bottom: 1px solid #ccc;
-        &:hover{
+        &:hover {
             background-color: #fff;
         }
         .update,
@@ -164,7 +193,7 @@ div.tag {
             }
         }
         a {
-            padding: 1em 0px .8em 65px;
+            padding: 1em 0px .8em 40px;
             position: relative;
             height: auto;
             line-height: 1.45em;
@@ -194,9 +223,13 @@ div.tag {
                 display: inline-block;
                 margin: 0px .5em;
             }
+            img {
+                margin-right: 5px;
+                vertical-align: middle;
+            }
             &:after {
                 content: "";
-                background: url(../images/basic/icon_other.jpg);
+                // background: url(../images/basic/icon_other.jpg);
                 width: 21px;
                 height: 24px;
                 position: absolute;
@@ -246,13 +279,11 @@ div.tag {
     margin: 0 auto;
     @extend %clearfix;
     position: relative;
-    
     h3 {
         font-size: 1.5em;
         padding: 12px 0px 15px 0;
         margin: 0.5em 0px 0.2em;
         border-bottom: 3px solid $primaryColor;
-        
     }
     ol,
     ul {
@@ -265,9 +296,8 @@ div.tag {
     }
     li {
         position: relative;
-       
         border-bottom: 1px solid #ccc;
-        &:hover{
+        &:hover {
             background-color: #fff;
         }
         a {
